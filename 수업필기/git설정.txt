@@ -1,0 +1,85 @@
+git status
+git init (제일 처음 한번만 / 다시 하려면 .git 파일 삭제)
+
+*.gitignore 부분은 무시할 파일 설정하는 곳
+(파일 이름만 써놓으면 됨. 확장자 없이)
+
+git add .
+=> 여기서 오류나면 아래 코드 입력
+git config --global core.autocrlf true
+다시 git add . 입력
+git status
+초록글자 뜨면 OK
+git commit -m "first"
+git branch
+git branch -M main		//마스터를 메인으로 이름 변경
+git remote add origin https://github.com/jungmin9911/python_pknu.git
+//내 계정으로 연결
+git push -u origin main	//계정 접속
+
+
+<로그인 계정 확인법>
+git config --global user.name
+git config --global user.email
+
+<로그인 계정 변경법>
+git config --global user.name "사용자 이름"
+git config --global user.email "사용자 이메일"
+
+<git 주소로 파일 받는 방법(클론)> - 원격 저장소에서 로컬 저장소로 복제
+1. 깃 파일들 받을 폴더 생성
+2. 마우스 우클릭으로 Bash 어쩌고 
+3. pwd로 경로 확인 후, git clone 깃주소 폴더이름
+4. git remote -v 로 확인
+========브랜치 생성법
+git branch 브랜치명
+git checkout 브랜치명		//해당 브랜치로 바로 이동
+git branch -d 브랜치명		// 브랜치 삭제
+
+<pull/push>
+git fetch 이거 먼저 해주고	// sudo apt update랑 비슷한 역할
+git pull 이거 해주기	// sudo apt update랑 비슷한 역할
+
+<수정내용 확인하기>
+git diff
+
+<히스토리 내역 확인하기>
+git log		// Q 눌러서 빠져나오기
+
+<과거로 돌아가기>
+git checkout 돌아가고자하는 파일 코드
+
+<브랜치 생성하는 전체적 흐름>
+main -> 과거 -> 브랜치 생성 -> main -> 병합
+git branch			// 현재 위치 확인
+git log			// 원하는 지점 해시값 확인
+git checkout 해시값	// 과거로 이동
+git branch			// 이동됐는지 확인
+git checkout -b 브랜치명 	// 브랜치 생성 후 바로 이동
+======
+git switch --detach (해시값)
+git branch
+git switch -c dev_이니셜
+git push -u origin dev_이니셜	// 브랜치 생성 후 첫 푸시때
+
+<용어>
+외부에
+포크 (상대팀 온라인 -> 나, 우리팀 온라인 -> 내 로컬)
+클론 (나, 우리팀 온라인 -> 내 로컬)
+PR
+
+<브랜치 생성 및 머지>
+git checkout -b 브랜치명		// 브랜치 생성 후 바로 이동
+git branch					// 브랜치 생성 확인
+git branch --set-upstream-to origin/main 브랜치명	// 메인에 브랜치 올리는..?? 역할..??
+git fetch
+git pull
+아무거나 테스트파일 생성
+git status
+git add .
+git commit -m "수정내용"
+git push -u origin 브랜치명		// 브랜치 생성 후 첫 푸시
+
+*메인으로 올리는 건 방장 허락 있어야 올라가고 자기 브랜치로 올리는 건 자기가 허락 가능
+
+

@@ -1,0 +1,161 @@
+ubuntu
+버전 22.04.5
+
+설치 완료 후에 터미널 관리자모드에서
+wsl.exe --install 입력
+
+<버전 확인>
+wsl -l -v
+삭제 wsl --unregister Ubuntu-22.04 또는 wsl --shutdown
+
+아이디 jm
+비밀번호 3333
+
+<현재 경로 확인>
+pwd 
+
+<이건 뭔지 모르겟음... 뭐 업그레이드는 굳이 안 해도 된다고 들었는데>
+sudo apt update
+sudo apt upgrade -y
+
+<파이썬 버전확인>
+python3 -V
+
+>>>>>
+그외 트러블 슈팅
+<wsl 버전 업그레이드>
+wsl --set-default-version 2
+wsl --update
+wsl -l -v
+
+<해당 파일 버전업하기>
+wsl --set-version Ubuntu-22.04 2
+
+<초기화>
+wsl --unregister Ubuntu-22.04
+wsl --install -d Ubuntu-22.04
+<<<<<
+
+[명령어 정리]
+ctrl + c (캔슬)
+cd (체인지 디렉토리)
+cd .. (상위 폴더로)
+cd ~ (홈으로)
+pwd (현재 경로 확인)        // ~(물결)로 표시된 경로는 기본 사용자 경로
+sudo passwd (관리자 버전 비번)    // 3333으로 설정함
+su (관리자(루트) 권한, 계속)
+sudo (관리자(루트) 권한, 한번만)
+exit (빠져나가기)
+ls -al (현재 폴더 리스트 상세)
+lshw (하드웨어 정보)
+lsusb (usb 정보)
+htop (프로세서 현황)
+mkdir (디렉토리 생성)
+rm 파일명 (파일or디렉토리 삭제)
+만약에 안 지워지면
+	rm -r 폴더명
+	rm -rf 폴더명 (강력함)
+
+alt + shift + "+" 	// 칸 나누기
+ctrl + shift + w 	// 칸 없애기
+alt + 화살표 	// 창 이동
+
+<간단 내용 출력 / 간단파일 생성>
+echo "내용"	// 내용 바로출력
+echo "내용" > 파일명.txt	// 텍스트 파일로 저장됨
+cat 파일명.txt 	// 내용 읽어오기
+cat > 파일명.txt 	// 새로 작성하기 / 'w' 기능)
+cat >> 파일명.txt	// 추가하기 / 'a' 기능)
+작성 다 하고 빠져나오는 방법 : Ctrl + C
+
+<그 외 명령어별 기능>
+vi(vim) (힘들어...? 뭔소리임?) 
+nano (편집기)
+.bashrc (사용자의 환경설정파일)
+sudo apt install cowsay (소가 말을 함...)
+cowsay 아무말 (그냥 해보셈... 소가 말을 함...)
+sudo apt remove cowsay (돌아가기)
+
+<터미널에서 우분투 접속하기>
+sudo apt install openssh-server	// ssh설치
+sudo systemctl status ssh 	// 잘 설치됐는지 확인
+sudo systemctl start ssh
+sudo systemctl stop ssh
+
+<우분투 서버 접속>
+ssh jm@172.23.215.117 또는 ssh jm@localhost		// ssh 아이디@주소
+ssh pkteam@mydb.iptime.org -p 221	// -p 뒤에는 포트번호
+
+<우분투에 SQL 설치>
+sudo apt update
+sudo apt install mysql-server
+sudo mysql>show db;>show databases;
+sudo systemctl status mysql
+sudo systemctl stop mysql
+sudo apt remove mysql-server
+
+윈도우에는 파이썬 깔아야되고, 우분투에는 미리 깔려져있음
+
+<우분투에서 주피터랩 설치/실행>
+sudo apt install python3-pip
+sudo apt install jupyter-core
+pip3 install jupyterlab
+
+<우분투에서 깃 설치/실행>
+sudo apt install git
+git init
+레포지터리 커밋
+
+<가상폴더 생성, 실행, 삭제 방법>
+sudo apt install python3-venv	// 모듈? 설치
+python3 -m venv (폴더명)	// 폴더가 생성됨
+가상폴더 접속 방법
+source (폴더명)/bin/activate 
+또는 source ./(폴더명)/bin/activate 
+또는 . (폴더명)/bin/activate
+나가기 deactivate
+삭제 sudo rm -rf (폴더/파일명)
+수정 mv (바꿀파일명) (기존파일명)
+
+* 가상환경 사용하는 이유
+다른 버전의 모듈등을 사용하기 위해?
+
+백업 pip freeze > requirements.txt
+복구 pip install -r requirements.txt
+
+버전 바꿔서 복구하는 방법 못들음 ㅋㅋ
+
+pip install --upgrade numpy (넘파이 업그레이드)
+pip install numpy==2.0.2 (특정버전 선택 후 업그레이드)
+
+<파일에 코드 바로 입력>
+cat <<'end'> 파일명.확장자 		// 굳이 end 아니어도 되는듯?
+코드 붙여넣고
+end
+==내용수정 필요시==
+nano 파일명.확장자	// 여기서 수정
+==수정 완료후==
+ctrl + X -> Y -> Enter
+
+<파일 이동법>
+mv 파일명.확장자 ./이동할곳
+
+<백그라운드 동작>
+nohub venv/bin/python bot_ajm.py & disown
+ps -ef | grep python	// 확인
+kill (PID번호)		// 종료
+
+<비밀번호 없이 실행?>
+sudo nano authorized_keys
+cat authorized_keys	// cmd창에서 키 조회하고 cat id_rsa.pub 했을때 나오는거
+
+<숨어있는 파일 조회하기...?>
+ls -a
+ls -al
+
+sudo chown pkteam .ssh
+
+
+
+
+

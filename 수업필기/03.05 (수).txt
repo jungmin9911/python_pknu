@@ -1,0 +1,23 @@
+03.05 (수)
+
+<우분투에서 주피터 실행>
+우분투에서 pip list 치고 requirements.txt 있는지 확인 
+터미널창에서 D드라이브 code폴더로 접속한 다음
+pip freeze > requirements.txt 	// 파일 백업
+ls re* 			// 백업 됐는지 조회
+ssh 이니셜@localhost 		// 서버 접속
+우분투창으로 넘어가면 exit로 빠져나온 다음
+explorer . 	
+파일탐색기 열리면 requirements.txt 파일 열고 다른이름으로 저장
+인코딩 부분 utf-8로 수정
+터미널창으로 ㄱㄱ
+scp -P 22 ./requirements.txt 이니셜@ip주소:/home/이니셜 // 파일 복사...?
+다시 우분투로 넘어가서
+ls	// requirements.txt 파일 있는지 확인
+nano requirements.txt
+pywin32 이거 지워주고저장
+pip install -r requirements.txt
+
+* ip주소 조회 방벙 : 우분투에 ifconfig 치고 173.어쩌고 뭐시기
+
+

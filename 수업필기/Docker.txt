@@ -1,0 +1,57 @@
+Docker Desktop
+도커 시스템 => 이미지(읽기전용) => [컨테이너(수정가능) => 컨테이너
+
+docker ps -a	// 이미지 상태 확인
+docker contaners ps -a		// 컨테이너 상태 확인
+docker images	// 이미지 확인
+docker rmi 이미지 ID	// 이미지 삭제
+docker run		// 컨테이너 생성 명령어
+ex) docker run -itd -p 22:22 --name ubuntu01 --hostname PKNU -v D:\\code:/home/data ubuntu:22.04
+**docker run -itd -p 22(컨테이너 외부):22(컨테이너 내부)**
+docker exec -it ubuntu01 bash	// 컨테이너 접속?
+apt update
+apt install python3 python3-pip
+
+docker run --name ju01 -p 8888:8888 -v D:\\code:/home/jovyan/data
+콜론(:)을 기준으로 왼쪽은 외부 포트, 오른쪽은 내부 포트
+docker run -itd --name ju01 --hostname PKNU --user root -p 8888:8888 -v D:\\code:/home/jovyan/data (해시값)
+--hostname
+--user root		// 관리자 권한
+
+도커 주피터 토큰
+b47aa54fb5283b26b7036362ff0b83b7dcf53f2fe4bb73d4
+
+docker desktop에서 컨테이너이름 선택 후 exec > bash 입력
+
+docker exec -it ju01 bash
+adduser pkuser
+
+<docker 컨테이너 중지>
+docker stop 컨테이너이름
+
+<docker 컨테이너 삭제>
+docker system prune		// 멈춰진 컨테이너 모두 삭제
+docker system prune -a	// 가동중인 컨테이너도 모두 삭제
+
+<docker 컨테이너 생성>
+docker run -itd -user root --name ju01 -p 8888:8888 -v D:\\code:/home/jovyan 해시값(이미지 이름)		// 컨테이너 생성
+-itd 뒤에 -rm 붙이면 stop했을때 컨테이너에서 사라지게하는 명령어(start하면 다시 생김)
+
+<dockerfile 생성 후 docker에서 우분투 접속? 후 주피터 열기?>
+docker build -t jm:1.0 .
+생성된 거 확인되면
+docker run -itd --name jm01 -p 22:22 jm1.0
+ssh pkjm@127.0.0.1 -p 22
+이후 yes, 비번(1234)치면 연결됨
+
+<docker에서? 주피터 열기>
+docker build -t jm:1.1 .		// dockerfile에 설정한 이름으로 버전 지정 후 빌드
+docker run -itd --name myjupyter --hostname PKNU -p 22:22 -p 8888:8888 -v d:\\code:/home/pkjm/data pkjm:1.1	// docker 실행
+docker logs myjupyter		// 주피터 실행
+
+<포트가 계속 막힐시>
+관리자 권한으로 cmd창 열고
+net stop winnat		// 포트가 다 막힘 (멈췄다고 뜨면 된 거, 시작되지 않았다면 없는거)
+
+<아이디 비번 조회>
+docker exec -it oracle11g bash

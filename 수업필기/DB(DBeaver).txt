@@ -1,0 +1,15 @@
+DB(DBeaver)
+
+<오라클 연결 후 테이블? 생성?>
+빈공간에 우클릭 후 create > connection 후 오라클 클릭
+Database 설정, SID, username설정, Role:Normal 확인, 비밀번호(12345 / oracle)
+테스트 커넥션 > 확인
+
+<이게 뭐하는 거라고요?>
+강사님 제공 파일 경로 설정 (C:\Source\java-database-2025\ref)
+XE - sampleuser 오라클 생성
+DBeaver > sysdba에? sampleuser에? 생성쿼리 드래그앤드랍 > 하나씩 실행
+sysdba에 테이블 쿼리 드래그앤드랍 > SAMPLEUSER로 연결 (없으면 XE > Schemas 우클릭 후 새로고침) > Alt + X로 전체 실행 > yes 후 skip all
+Schema에 SAMPLEUSER 생겼는지 확인하고 우클릭 > 새로고침
+이후 XE - sampleuser 오라클 연결
+

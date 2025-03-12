@@ -1,0 +1,19 @@
+explorer.exe    해당 경로의 파일탐색기를 띄워줌
+explorer.exe .    해당 경로의 파일탐색기를 띄워줌
+
+<본인키 확인법>
+ssh-keygen -t rsa	
+이후 엔터, 엔터, 엔터...
+cd .ssh
+ls
+
+ssh-keygen -t rsa	-b 4096 -C "jmahn1819@gmail.com"
+과한 권한이라 다른 설정
+sudo usermode -aG root pkteam
+sudo chown -R pkteam .ssh
+
+git remote set-url origin git@github.com:myplc/pkteam06.git
+
+<메인 pull받기?>
+git fetch
+git pull origin main
