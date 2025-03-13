@@ -1,6 +1,7 @@
 Docker Desktop
 도커 시스템 => 이미지(읽기전용) => [컨테이너(수정가능) => 컨테이너
 
+docker ps		// 실행중인 컨테이너 확인
 docker ps -a	// 이미지 상태 확인
 docker contaners ps -a		// 컨테이너 상태 확인
 docker images	// 이미지 확인
