@@ -21,3 +21,9 @@ Schema에 SAMPLEUSER 생겼는지 확인하고 우클릭 > 새로고침
 테이블 생성 후
 XE > Schemas > SAMPLEUSER에서 우클릭 > create > other > er다이어그램
 테이블에 해당하는 테이블만 체크 후 이름 지정하고 완성
+
+<ROLLBACK 적용법>
+윈도우 > 환경설정 > 연결 > 연결유형 > Auto-commit by default 체크해제
+Auto-commit을 끄고나면 DDL, DML(select 제외) 작업 끝내고 무조건 커밋 후 파일 저장!!
+
+*ER다이어그램에서 -- 동그라미가 부모 마름모가 자식
