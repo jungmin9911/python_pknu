@@ -27,3 +27,20 @@ XE > Schemas > SAMPLEUSER에서 우클릭 > create > other > er다이어그램
 Auto-commit을 끄고나면 DDL, DML(select 제외) 작업 끝내고 무조건 커밋 후 파일 저장!!
 
 *ER다이어그램에서 -- 동그라미가 부모 마름모가 자식
+
+<프로시저 생성>
+샘플유저 > 프로시저 > 우클릭 > 크리에이트 어쩌고
+이름 : up_sal
+type : procedure 후 생성
+declaration에서 코드 입력
+세이브 > 익스큐트
+
+<함수 생성>
+샘플유저 > function > 우클릭 > 크리에이트 어쩌고
+이름 : max_sal
+type : FUNCTION 후 생성
+declaration에서 코드 입력
+세이브 > 익스큐트
+
+<트리거> - 백업에 로그 다 남겨놓는 거?
+
