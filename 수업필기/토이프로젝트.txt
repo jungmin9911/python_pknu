@@ -1,0 +1,5 @@
+◎ 파이썬 오라클 연동
+C드라이버 > Dev > Tool이라는 폴더 생성
+Oracle 맞는 버전 압축 풀어서 Tool에 넣어주기 (instantclient_11_2)
+윈도우 + R > 고급 > 환경변수 > 시스템 변수에 path 클릭 > 새로만들기
+C:\Dev\Tool\instantclient_11_2 경로 추가 > 재부팅 > VS 실행
