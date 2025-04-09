@@ -1,0 +1,45 @@
+04.09 (수)
+
+▶ 도커로 주피터 접속
+<파일명 - py12_CRUD_mongoDB>
+
+!pip install pymongo
+
+▶ 도커 데스크탑 
+이미지 mongodb > exec 
+또는 cmd > docker exec -it mongodb bash (docker exec -it mongodb sh 도 있음)
+ls	// 목록 확인
+mongosh
+tset dbs
+use mdb	// mdb로 연결. test> 에서 mdb> 이걸로 바뀌어있을 거임
+show dbs	// dbs 조회
+db.c1(컬렉션 이름임).insertOne({name:'hong', age:22, etc:"아버지부르지못함"})	// 컬렉션을 하나만 넣을땐 insertOne, 많으면 insertMany
+show dbs	// 생성 확인
+db.c1.insertOne({name:'superman', etc:"힘이 셈"})
+db.c1.insertMany([{name:'coolboy', age:17, etc:"잘생김"}, {name:'cutegirl', age:20}])
+db.c1.find()		// c1 컬렉션 조회
+db.c1.find({age:{$gte:20}})	// 조건 검색(sql에서 WHERE 역할), 객체로 들어가야함
+** gte에 대한 설명은 dockerfile 메모장 확인. 크거나 같다
+db.c1.findOne({name:"hong"})	// 하나만 찾을 경우
+db.c1.updateOne({name:'cutegirl'},{$set:{gender:"female"}})
+db.c1.updateMany({age:{$lte:19}},{$set:{prop:"미성년자"}})	// 19세 이하는 미성년자
+db.c1.deleteOne({name:"hong"})	// 삭제
+db.c1.insertMany([{name:"test1", age:100},{name:"test2", etc:"연습용"}])	// 예제
+db.c1.deleteMany({name:/^test/})	// test 어쩌고 삭제
+exit 후 cat /data/db/.mongodb/mongosh/mongosh_repl_history	// 로그 조회
+
+▶ MongoDB Compass
+Add new connection > URI - mongodb://localhost:27017/ 확인
+Name > docker mongodb
+Color > purple
+Favorite this connection 	// 즐겨찾기 같은 거라 마음대로 설정해도 됨
+Advanced Connection Options > Authentication 에서 원래는 뭘 설정해줘야 되나본데... 우리는 아이디 비번 설정해놓은 게 없어서 그냥 connect 하면 끝!
+생성된 docker mongodb > mdb 안에 아까 생성한 c1 있음
+여기서 insert... 뭐시기 해서 값 한번 넣어보기 (0409 카톡 11:27)
+
+** oralcle11g가 자꾸 먼저 실행되는 경우!!
+cmd창 > docker update --restart=no oracle11g (oracle11g 꺼져있는 상태에서 실행)
+
+▶ 도커로 주피터 접속
+
+

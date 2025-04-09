@@ -1,25 +1,53 @@
 VSCode DockerFile
 
+필기 ===============================================
 docker-compose
 Jupyterlab
 오라클DB
 mySQL
+mongoDB
 
-Dockerfile 수정 후 (pkjm을 pkdata로)
-해당 파일이 들어있는 폴더 우클릭 후 통합 테이블 열기
-docker build -t myj:1.0 .
+* mongodb 6.0 이상으로 5.x 대를 빨리 건너뜀
+6.0 이상은 실행 쉘이 없기에 mongosh를 설치해서 작동해야함
 
 Dockerfile -> 이미지 못바꿈, 읽기전용 -> 컨테이너 (docker run ~~) 
 docker-compose -> 컨테이너를 만들기 위해 
 
 3306 => mysql 기본포트
 
+<monogodb>
+데이터베이스 필요하지만 초기생성 X
+컬렉션 (데이터베이스가 유동적으로 생성됨)
+MongoDB는 lazy creation을 채택
+사용자가 필요할때 자동생성됨
+
+- mongodb 비교구문 6가지
+			원본		mongoDB
+크다			>		[GT]
+크거나 같다	>= 		[GTE] / [GE]
+작다			<		[LT]
+작거나 같다	<= 		[LTE] / [LE]
+같다			==, ===	[EQ]
+다르다		<>, !, not 	[NEQ] / [NE]
+
+실행 코드 ============================================
+▶ VS code에서
+Dockerfile 에서 pkjm을 pkdata로 수정 후
+Dockerfile 우클릭 > 통합 테이블 열기
+docker build -t myj:1.0 .
+docker-compose.yml 우클릭 > 통합 테이블 열기
+docker login
+docker compose up -d
+
+▶ CMD창에서
 docker exec -it mysql bash
 mysql -uroot -p
 비번 : 1234
+-> 접속 확인
 
 <다른 데이터베이스로 위치 바꾸는 방법>
 USE 데이터베이스명;
+수업시간엔 USE mydb; 로 돌렸음
 
 <CREATE> - CREATE, INSERT
 - 데이터베이스 생성
@@ -54,7 +82,7 @@ JOIN:
 	JOIN 테이블2 AS t2
 	ON t1.공통컬럼 = t2.공통컬럼;
 
-==================================================
+정리 ===============================================
 
 1. VS Code에서 docker 초기 코드 작성 후 실행
 2. docker desktop에 생성 확인, 동작 확인
