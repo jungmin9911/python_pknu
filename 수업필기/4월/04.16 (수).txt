@@ -1,2 +1,96 @@
 04.16 (수)
 
+▶ CMD
+<한글 깨짐 고치기>
+namenode에서
+locale
+sudo apt update && sudo apt install -y locales
+sudo locale-gen en_US.UTF-8
+sudo update-locale LANG=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+source .bashrc
+locale
+
+<파일 업로드>
+namenode에서
+ls
+cd hadoop-3.4.1/		// tab 누르면 자동생성
+ls
+hdfs dfs -put ./LICENSE.txt /user/hadoop		// 파일생성
+hdfs dfs -cat /user/hadoop/LICENSE.txt		// 파일읽기
+
+ls
+cd share
+cd hadoop
+cd mapreduce
+ls
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-m
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar wordcount /user/hadoop/LICENSE.txt /user/hadoop/wordcount-output
+hdfs dfs -cat /user/hadoop/wordcount-output/part-r-00000
+
+<예제>
+1. wordcount, mapredue 예제
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar wordcount /user/hadoop/LICENSE.txt /user/hadoop/wordcount-output
+2. PI 예제
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar pi 5 1000
+3. Grep (패턴검색) 예제
+hadoop jar $HADOOP_HOME/share/hadoop/mapreduce/hadoop-mapreduce-examples-3.4.1.jar grep /user/hadoop/LICENSE.txt /user/hadoop/grep-output "Apache"
+
+hostname -I
+stop-all.sh
+
+▶ Docker Desktop
+hdfs 멈춤
+
+▶ CMD
+docker network ls
+docker network
+docker network connect hdfs_mynet jupyterlab
+docker network inspect hdfs_mynet
+도커 다시 켜고
+ssh hadoop@localhost -p 2220	// namenode 연결
+hostname -I		// 172.19.0.6
+hdfs dfs -ls -R /user/hadoop		// 오류 뜰 것
+star-all.sh
+hdfs dfs -ls -R /user/hadoop		// 조회 될 것
+// 이후 주피터 user, host, path 정보 들어가있는 코드 돌리면 조회됨
+
+▶ jupyterlab (Docker 서버(
+python14_HDFS_파일분석
+- 
+
+▶ 국가통계포털
+출생률 csv 파일 다운로드
+
+▶ Docker Desktop
+zeppelin 설치
+실행
+
+▶ CMD
+docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/code/dockerfile_data:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0
+
+docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/code/dockerfile_data/zeppelin:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0
+
+연결 완료됐으면 도커 데스크탑 > zep01 컨테이너 생성 확인
+> 인터넷 주소창에 localhost:28080 (또는 zep01에 포트번호 클릭)
+
+▶ 제플린에서 실행하기...?
+파일서버에서 Tips > myset.sh 다운 후 내 code 폴더에 Tips 폴더 생성하고 삽입
+CMD창에서
+scp -P 2220 ./myset.sh hadoop@localhost:/home/hadoop/
+namenode에서
+hdfs dfs -mkdir -p /user/hadoop
+hdfs dfs -chmod 777 /user/hadoop
+ls	// myset.sh 생성 확인
+파일탐색기에서 code > dockerfile_data > zeppelin 생성 확인
+도커 데스크탑에서 zep01 포트번호 클릭으로 제플린 띄우기
+제플린 창 열리면 새로운 노트 > /data/노트명 > 파이썬 생성	// 노트명 zep01 이라고 해놓음 (카톡 나에게보내기 확인)
+파일 탐색기에 파일 생성 확인
+예제 코드 실행
+
+
+
+
+
+

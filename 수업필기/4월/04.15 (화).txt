@@ -22,7 +22,8 @@ namenode에서 datanode 접속 방법
 namenode에서
 - ssh-keygen -t rsa > cd .ssh 
 >> id_rsa  id_rsa.pub 조회확인
-- cd ~ > ssh-copy-id hadoop@datanode1 > 1234
+- cd ~ 
+- ssh-copy-id hadoop@datanode1 > 1234
 - ssh-copy-id hadoop@datanode2 > yes > 1234
 - ssh-copy-id hadoop@datanode3 > yes > 1234
 

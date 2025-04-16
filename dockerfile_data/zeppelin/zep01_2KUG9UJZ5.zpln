@@ -1,0 +1,293 @@
+{
+  "paragraphs": [
+    {
+      "text": "# %sh\r\n# pip install hdfs",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:05:55.802",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": []
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744787134059_867113179",
+      "id": "paragraph_1744787134059_867113179",
+      "dateCreated": "2025-04-16 07:05:34.059",
+      "dateStarted": "2025-04-16 07:05:55.813",
+      "dateFinished": "2025-04-16 07:05:55.869",
+      "status": "FINISHED"
+    },
+    {
+      "text": "from hdfs import InsecureClient\r\nimport pandas as pd\r\nuser \u003d \"hadoop\"\r\nhost \u003d \"http://namenode:9870\"\r\npath \u003d \"/user/hadoop/\"\r\nfilename \u003d \"월분기연간인구동향_출생_2025.csv\"\r\nhdfs \u003d InsecureClient(host, user\u003duser)\r\nwith hdfs.read(path + filename, encoding\u003d\"EUC-KR\") as reader:\r\n    data \u003d pd.read_csv(reader)\r\ndata",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:08:09.516",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv\u003e\n\u003cstyle scoped\u003e\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n\u003c/style\u003e\n\u003ctable border\u003d\"1\" class\u003d\"dataframe\"\u003e\n  \u003cthead\u003e\n    \u003ctr style\u003d\"text-align: right;\"\u003e\n      \u003cth\u003e\u003c/th\u003e\n      \u003cth\u003e시점\u003c/th\u003e\n      \u003cth\u003e행정구역별(1)\u003c/th\u003e\n      \u003cth\u003e출생아수(명)\u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003cth\u003e0\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e서울특별시\u003c/td\u003e\n      \u003ctd\u003e83005\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e1\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e부산광역시\u003c/td\u003e\n      \u003ctd\u003e26645\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e2\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e대구광역시\u003c/td\u003e\n      \u003ctd\u003e19438\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e3\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e인천광역시\u003c/td\u003e\n      \u003ctd\u003e25491\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e4\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e광주광역시\u003c/td\u003e\n      \u003ctd\u003e12441\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e...\u003c/th\u003e\n      \u003ctd\u003e...\u003c/td\u003e\n      \u003ctd\u003e...\u003c/td\u003e\n      \u003ctd\u003e...\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e165\u003c/th\u003e\n      \u003ctd\u003e2024 p)\u003c/td\u003e\n      \u003ctd\u003e전북특별자치도\u003c/td\u003e\n      \u003ctd\u003e6800\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e166\u003c/th\u003e\n      \u003ctd\u003e2024 p)\u003c/td\u003e\n      \u003ctd\u003e전라남도\u003c/td\u003e\n      \u003ctd\u003e8200\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e167\u003c/th\u003e\n      \u003ctd\u003e2024 p)\u003c/td\u003e\n      \u003ctd\u003e경상북도\u003c/td\u003e\n      \u003ctd\u003e10300\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e168\u003c/th\u003e\n      \u003ctd\u003e2024 p)\u003c/td\u003e\n      \u003ctd\u003e경상남도\u003c/td\u003e\n      \u003ctd\u003e13100\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e169\u003c/th\u003e\n      \u003ctd\u003e2024 p)\u003c/td\u003e\n      \u003ctd\u003e제주특별자치도\u003c/td\u003e\n      \u003ctd\u003e3200\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e170 rows × 3 columns\u003c/p\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744787089200_41776742",
+      "id": "paragraph_1744787089200_41776742",
+      "dateCreated": "2025-04-16 07:04:49.200",
+      "dateStarted": "2025-04-16 07:08:09.525",
+      "dateFinished": "2025-04-16 07:08:10.040",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ex1_data \u003d data.copy()\r\nex1_data.columns \u003d [\"year\", \"region\", \"value\"]\r\nex1_data[\"value\"] \u003d ex1_data[\"value\"].astype(str).replace(\u0027-\u0027, 0).astype(int)\r\nex1_data.head(3)",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:40:59.156",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv\u003e\n\u003cstyle scoped\u003e\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n\u003c/style\u003e\n\u003ctable border\u003d\"1\" class\u003d\"dataframe\"\u003e\n  \u003cthead\u003e\n    \u003ctr style\u003d\"text-align: right;\"\u003e\n      \u003cth\u003e\u003c/th\u003e\n      \u003cth\u003eyear\u003c/th\u003e\n      \u003cth\u003eregion\u003c/th\u003e\n      \u003cth\u003evalue\u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003cth\u003e0\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e서울특별시\u003c/td\u003e\n      \u003ctd\u003e83005\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e1\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e부산광역시\u003c/td\u003e\n      \u003ctd\u003e26645\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e2\u003c/th\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e대구광역시\u003c/td\u003e\n      \u003ctd\u003e19438\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744787128084_1599607948",
+      "id": "paragraph_1744787128084_1599607948",
+      "dateCreated": "2025-04-16 07:05:28.084",
+      "dateStarted": "2025-04-16 07:40:59.166",
+      "dateFinished": "2025-04-16 07:40:59.238",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ex1_data \u003d ex1_data.groupby([\u0027region\u0027, \u0027year\u0027], as_index\u003dFalse)[\u0027value\u0027].sum()\r\nex1_data.head(3)",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:42:48.850",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "HTML",
+            "data": "\u003cdiv\u003e\n\u003cstyle scoped\u003e\n    .dataframe tbody tr th:only-of-type {\n        vertical-align: middle;\n    }\n\n    .dataframe tbody tr th {\n        vertical-align: top;\n    }\n\n    .dataframe thead th {\n        text-align: right;\n    }\n\u003c/style\u003e\n\u003ctable border\u003d\"1\" class\u003d\"dataframe\"\u003e\n  \u003cthead\u003e\n    \u003ctr style\u003d\"text-align: right;\"\u003e\n      \u003cth\u003e\u003c/th\u003e\n      \u003cth\u003eregion\u003c/th\u003e\n      \u003cth\u003eyear\u003c/th\u003e\n      \u003cth\u003evalue\u003c/th\u003e\n    \u003c/tr\u003e\n  \u003c/thead\u003e\n  \u003ctbody\u003e\n    \u003ctr\u003e\n      \u003cth\u003e0\u003c/th\u003e\n      \u003ctd\u003e강원특별자치도\u003c/td\u003e\n      \u003ctd\u003e2015\u003c/td\u003e\n      \u003ctd\u003e10929\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e1\u003c/th\u003e\n      \u003ctd\u003e강원특별자치도\u003c/td\u003e\n      \u003ctd\u003e2016\u003c/td\u003e\n      \u003ctd\u003e10058\u003c/td\u003e\n    \u003c/tr\u003e\n    \u003ctr\u003e\n      \u003cth\u003e2\u003c/th\u003e\n      \u003ctd\u003e강원특별자치도\u003c/td\u003e\n      \u003ctd\u003e2017\u003c/td\u003e\n      \u003ctd\u003e8958\u003c/td\u003e\n    \u003c/tr\u003e\n  \u003c/tbody\u003e\n\u003c/table\u003e\n\u003c/div\u003e"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744789259165_1372565607",
+      "id": "paragraph_1744789259165_1372565607",
+      "dateCreated": "2025-04-16 07:40:59.166",
+      "dateStarted": "2025-04-16 07:42:48.862",
+      "dateFinished": "2025-04-16 07:42:48.924",
+      "status": "FINISHED"
+    },
+    {
+      "text": "ex1_data[\u0027value\u0027] \u003d ex1_data.groupby([\u0027region\u0027])[\u0027value\u0027].apply(lambda x: 100 * x/ float(x.sum())).reset_index(drop\u003dTrue)\r\nex1_data \u003d ex1_data.dropna()\r\nprint(ex1_data.head(10))",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:46:15.350",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "    region     year      value\n0  강원특별자치도     2015  13.273498\n1  강원특별자치도     2016  12.215650\n2  강원특별자치도     2017  10.879677\n3  강원특별자치도     2018  10.142463\n4  강원특별자치도     2019  10.059876\n5  강원특별자치도     2020   9.515771\n6  강원특별자치도     2021   8.935230\n7  강원특별자치도     2022   8.839282\n8  강원특별자치도     2023   8.122715\n9  강원특별자치도  2024 p)   8.015837\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744789368861_208435179",
+      "id": "paragraph_1744789368861_208435179",
+      "dateCreated": "2025-04-16 07:42:48.861",
+      "dateStarted": "2025-04-16 07:46:15.361",
+      "dateFinished": "2025-04-16 07:46:15.425",
+      "status": "FINISHED"
+    },
+    {
+      "text": "import numpy as np\r\nimport matplotlib\r\nimport matplotlib.pyplot as plt\r\nimport matplotlib.dates as mdates\r\n# 극좌표 플롯\r\n# 데이터 생성\r\nangles \u003d np.linspace(0, 2*np.pi, 10, endpoint\u003dFalse)\r\nradii \u003d np.random.rand(10)*10\r\n\r\n# 첫 번째 값을 마지막에 추가하여 원형 플롯완성\r\nangles \u003d np.concatenate((angles, [angles[0]]))\r\nradii \u003d np.concatenate((radii, [radii[0]]))\r\n\r\n# 극좌표 플롯 생성\r\nfig, ax \u003d plt.subplots(subplot_kw \u003d dict(polar\u003dTrue))\r\nax.plot(angles, radii, \u0027o-\u0027, linewidth\u003d2)\r\n\r\n# 배경 채우기\r\nax.fill(angles, radii, alpha \u003d 0.25)\r\n\r\n# 플롯 제목 생성\r\nax.set_title(\"극좌표 플롯 예시\", size\u003d20)\r\nfig.savefig(\"./p1.png\")",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:54:36.368",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 44537 (\\N{HANGUL SYLLABLE GEUG}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 51340 (\\N{HANGUL SYLLABLE JWA}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 54364 (\\N{HANGUL SYLLABLE PYO}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 54540 (\\N{HANGUL SYLLABLE PEUL}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 47215 (\\N{HANGUL SYLLABLE ROS}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 50696 (\\N{HANGUL SYLLABLE YE}) missing from current font.\n  fig.savefig(\"./p1.png\")\n/tmp/ipykernel_274/3251464023.py:23: UserWarning: Glyph 49884 (\\N{HANGUL SYLLABLE SI}) missing from current font.\n  fig.savefig(\"./p1.png\")\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744789470316_1164647832",
+      "id": "paragraph_1744789470316_1164647832",
+      "dateCreated": "2025-04-16 07:44:30.316",
+      "dateStarted": "2025-04-16 07:54:36.381",
+      "dateFinished": "2025-04-16 07:54:37.202",
+      "status": "FINISHED"
+    },
+    {
+      "text": "# os에 있는 사용가능한 폰트 나열\r\nimport matplotlib\r\nimport matplotlib.pyplot as plt\r\nfrom matplotlib import rc\r\nimport matplotlib.font_manager as fm\r\nfontlist \u003d fm.findSystemFonts(fontpaths\u003dNone, fontext\u003d\u0027ttf\u0027)\r\n# 윈도우용 폰트 경로 설정\r\npath \u003d \"C:\\\\Windows\\\\Fonts\\\\NanumGothicLight.otf\"\r\nfont_name \u003d fm.FontProperties(fname \u003d path).get_name()\r\nrc(\"font\", family \u003d font_name)\r\nplt.text(0.2, 0.4, \"한글\", size\u003d100)",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:59:08.785",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\u001b[0;31m---------------------------------------------------------------------------\u001b[0m\n\u001b[0;31mFileNotFoundError\u001b[0m                         Traceback (most recent call last)\nCell \u001b[0;32mIn[17], line 9\u001b[0m\n\u001b[1;32m      7\u001b[0m \u001b[38;5;66;03m# 윈도우용 폰트 경로 설정\u001b[39;00m\n\u001b[1;32m      8\u001b[0m path \u001b[38;5;241m\u003d\u001b[39m \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mC:\u001b[39m\u001b[38;5;130;01m\\\\\u001b[39;00m\u001b[38;5;124mWindows\u001b[39m\u001b[38;5;130;01m\\\\\u001b[39;00m\u001b[38;5;124mFonts\u001b[39m\u001b[38;5;130;01m\\\\\u001b[39;00m\u001b[38;5;124mNanumGothicLight.otf\u001b[39m\u001b[38;5;124m\"\u001b[39m\n\u001b[0;32m----\u003e 9\u001b[0m font_name \u001b[38;5;241m\u003d\u001b[39m \u001b[43mfm\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mFontProperties\u001b[49m\u001b[43m(\u001b[49m\u001b[43mfname\u001b[49m\u001b[43m \u001b[49m\u001b[38;5;241;43m\u003d\u001b[39;49m\u001b[43m \u001b[49m\u001b[43mpath\u001b[49m\u001b[43m)\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mget_name\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\n\u001b[1;32m     10\u001b[0m rc(\u001b[38;5;124m\"\u001b[39m\u001b[38;5;124mfont\u001b[39m\u001b[38;5;124m\"\u001b[39m, family \u001b[38;5;241m\u003d\u001b[39m font_name)\n\u001b[1;32m     11\u001b[0m plt\u001b[38;5;241m.\u001b[39mtext(\u001b[38;5;241m0.2\u001b[39m, \u001b[38;5;241m0.4\u001b[39m, \u001b[38;5;124m\"\u001b[39m\u001b[38;5;124m한글\u001b[39m\u001b[38;5;124m\"\u001b[39m, size\u001b[38;5;241m\u003d\u001b[39m\u001b[38;5;241m100\u001b[39m)\n\nFile \u001b[0;32m/opt/conda/envs/python_3_with_R/lib/python3.9/site-packages/matplotlib/font_manager.py:737\u001b[0m, in \u001b[0;36mFontProperties.get_name\u001b[0;34m(self)\u001b[0m\n\u001b[1;32m    733\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21mget_name\u001b[39m(\u001b[38;5;28mself\u001b[39m):\n\u001b[1;32m    734\u001b[0m \u001b[38;5;250m    \u001b[39m\u001b[38;5;124;03m\"\"\"\u001b[39;00m\n\u001b[1;32m    735\u001b[0m \u001b[38;5;124;03m    Return the name of the font that best matches the font properties.\u001b[39;00m\n\u001b[1;32m    736\u001b[0m \u001b[38;5;124;03m    \"\"\"\u001b[39;00m\n\u001b[0;32m--\u003e 737\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43mget_font\u001b[49m\u001b[43m(\u001b[49m\u001b[43mfindfont\u001b[49m\u001b[43m(\u001b[49m\u001b[38;5;28;43mself\u001b[39;49m\u001b[43m)\u001b[49m\u001b[43m)\u001b[49m\u001b[38;5;241m.\u001b[39mfamily_name\n\nFile \u001b[0;32m/opt/conda/envs/python_3_with_R/lib/python3.9/site-packages/matplotlib/font_manager.py:1424\u001b[0m, in \u001b[0;36mget_font\u001b[0;34m(filename, hinting_factor)\u001b[0m\n\u001b[1;32m   1422\u001b[0m     hinting_factor \u001b[38;5;241m\u003d\u001b[39m rcParams[\u001b[38;5;124m\u0027\u001b[39m\u001b[38;5;124mtext.hinting_factor\u001b[39m\u001b[38;5;124m\u0027\u001b[39m]\n\u001b[1;32m   1423\u001b[0m \u001b[38;5;66;03m# also key on the thread ID to prevent segfaults with multi-threading\u001b[39;00m\n\u001b[0;32m-\u003e 1424\u001b[0m \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43m_get_font\u001b[49m\u001b[43m(\u001b[49m\u001b[43mfilename\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mhinting_factor\u001b[49m\u001b[43m,\u001b[49m\n\u001b[1;32m   1425\u001b[0m \u001b[43m                 \u001b[49m\u001b[43m_kerning_factor\u001b[49m\u001b[38;5;241;43m\u003d\u001b[39;49m\u001b[43mrcParams\u001b[49m\u001b[43m[\u001b[49m\u001b[38;5;124;43m\u0027\u001b[39;49m\u001b[38;5;124;43mtext.kerning_factor\u001b[39;49m\u001b[38;5;124;43m\u0027\u001b[39;49m\u001b[43m]\u001b[49m\u001b[43m,\u001b[49m\n\u001b[1;32m   1426\u001b[0m \u001b[43m                 \u001b[49m\u001b[43mthread_id\u001b[49m\u001b[38;5;241;43m\u003d\u001b[39;49m\u001b[43mthreading\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mget_ident\u001b[49m\u001b[43m(\u001b[49m\u001b[43m)\u001b[49m\u001b[43m)\u001b[49m\n\nFile \u001b[0;32m/opt/conda/envs/python_3_with_R/lib/python3.9/site-packages/matplotlib/font_manager.py:1405\u001b[0m, in \u001b[0;36m_get_font\u001b[0;34m(filename, hinting_factor, _kerning_factor, thread_id)\u001b[0m\n\u001b[1;32m   1403\u001b[0m \u001b[38;5;129m@lru_cache\u001b[39m(\u001b[38;5;241m64\u001b[39m)\n\u001b[1;32m   1404\u001b[0m \u001b[38;5;28;01mdef\u001b[39;00m\u001b[38;5;250m \u001b[39m\u001b[38;5;21m_get_font\u001b[39m(filename, hinting_factor, \u001b[38;5;241m*\u001b[39m, _kerning_factor, thread_id):\n\u001b[0;32m-\u003e 1405\u001b[0m     \u001b[38;5;28;01mreturn\u001b[39;00m \u001b[43mft2font\u001b[49m\u001b[38;5;241;43m.\u001b[39;49m\u001b[43mFT2Font\u001b[49m\u001b[43m(\u001b[49m\n\u001b[1;32m   1406\u001b[0m \u001b[43m        \u001b[49m\u001b[43mfilename\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43mhinting_factor\u001b[49m\u001b[43m,\u001b[49m\u001b[43m \u001b[49m\u001b[43m_kerning_factor\u001b[49m\u001b[38;5;241;43m\u003d\u001b[39;49m\u001b[43m_kerning_factor\u001b[49m\u001b[43m)\u001b[49m\n\n\u001b[0;31mFileNotFoundError\u001b[0m: [Errno 2] No such file or directory: \u0027/opt/zeppelin/C:\\\\Windows\\\\Fonts\\\\NanumGothicLight.otf\u0027"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744790076380_49124715",
+      "id": "paragraph_1744790076380_49124715",
+      "dateCreated": "2025-04-16 07:54:36.380",
+      "dateStarted": "2025-04-16 07:59:08.796",
+      "dateFinished": "2025-04-16 07:59:08.960",
+      "status": "ERROR"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-16 07:59:18.829",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1744790348795_1795407238",
+      "id": "paragraph_1744790348795_1795407238",
+      "dateCreated": "2025-04-16 07:59:08.796",
+      "status": "READY"
+    }
+  ],
+  "name": "zep01",
+  "id": "2KUG9UJZ5",
+  "defaultInterpreterGroup": "python",
+  "version": "0.12.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false,
+    "looknfeel": "default",
+    "personalizedMode": "false"
+  },
+  "info": {}
+}
