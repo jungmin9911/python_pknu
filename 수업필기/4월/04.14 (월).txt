@@ -1,0 +1,32 @@
+04.14 (월)
+
+▶ 윈도우 jupyter
+python13_셀레니움크롤링3
+
+▶ Docker > jupyterlab > Exec
+sudo apt update
+sudo apt-get install -y fonts-namum
+sudo rm ~fc-cache -fv
+rm ~/.cache/matplotlib -rf
+
+▶ 공공데이터포털
+https://www.data.go.kr/data/3076607/fileData.do
+부산광역시 주민등록인구통계 csv 파일 다운로드
+code > ref 폴더에 넣기
+
+▶ 국가통계포털
+https://kosis.kr/search/search.do
+부산 산업 사업체구분별 사업체수 종사자수 csv 파일 다운로드
+code > ref 폴더에 넣기
+(조회목록, 행렬전환 등 사진 첨부)
+
+▶ 구글 드라이버
+새 파일 생성 > 스프레드 시트
+확장 프로그램 > 부가기능 > 부가기능 설치하기 > Geocode by Awesome Table 설치
+최상단에 주소, latitude, longitude 입력하고 주소 붙여넣기
+확장 프로그램 > Geocode 어쩌고 > Start Geocoding
+Address columns > '주소' 열 선택 후 Geocode! 하면 위도 경도 자동 생성
+csv 파일로 저장해 code > ref 폴더에 넣기
+
+▶ 다시 윈도우 Jupyter
+python13_셀레니움크롤링3
