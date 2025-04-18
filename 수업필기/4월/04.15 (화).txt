@@ -7,7 +7,7 @@ Dockerfile
 > 통합 터미널 > docker login > docker build -t jm-hdfs:1.0 .
 docker-compose.yml
 namenode, datanode1, datanode2, datanode3 생성
-> 통합 터미널 > docker compsoe up -d
+> 통합 터미널 > docker compose up -d
 * 잘못 만들었으면 docker에서 hdfs 지우고 compose 명령어 다시 실행
 
 ▶ CMD창
@@ -61,7 +61,7 @@ nano workers
 
 ▶ VS Code
 확장 > Remote - SSH 설치
-좌측 하단에 파란색 >< 이거 크로스된 모양 클릭 > Connect to host > 새 호스트 추가
+좌측 하단에 파란색 >< 이거 크로스된 모양 클릭 > Connect to host > ssh 호스트 구성
 >>>>
 # Read more about SSH config files: https://linux.die.net/man/5/ssh_config
 Host hadoop_ssh
@@ -189,7 +189,7 @@ sudo mkdir -p /data/hadoop/dfs/name
 sudo mkdir -p /data/hadoop/dfs/data
 sudo ch -p hadoop:hadoop /data/hadoop
 
-hdfs namenode -format
+hdfs namenode -format	// 처음 한번만 실행
 start-all.sh
 jps
 hdfs dfs -mkdir -p /user/hadoop

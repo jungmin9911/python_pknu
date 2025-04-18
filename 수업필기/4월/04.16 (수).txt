@@ -56,7 +56,7 @@ star-all.sh
 hdfs dfs -ls -R /user/hadoop		// 조회 될 것
 // 이후 주피터 user, host, path 정보 들어가있는 코드 돌리면 조회됨
 
-▶ jupyterlab (Docker 서버(
+▶ jupyterlab (Docker 서버)
 python14_HDFS_파일분석
 - 
 
@@ -68,8 +68,10 @@ zeppelin 설치
 실행
 
 ▶ CMD
+// 오류나는 코드
 docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/code/dockerfile_data:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0
 
+// 맞는 코드
 docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/code/dockerfile_data/zeppelin:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0
 
 연결 완료됐으면 도커 데스크탑 > zep01 컨테이너 생성 확인
