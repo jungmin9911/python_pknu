@@ -1,0 +1,242 @@
+{
+  "paragraphs": [
+    {
+      "text": "%sh\r\nhostname -I",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:34:57.241",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "172.19.0.2 172.20.0.4 \n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745197858388_149386026",
+      "id": "paragraph_1745197858388_149386026",
+      "dateCreated": "2025-04-21 01:10:58.390",
+      "dateStarted": "2025-04-21 01:34:57.251",
+      "dateFinished": "2025-04-21 01:34:57.267",
+      "status": "FINISHED"
+    },
+    {
+      "text": "%sh\napt install -y iputils-ping",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:37:35.957",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "enabled": true,
+        "results": {},
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "\nWARNING: apt does not have a stable CLI interface. Use with caution in scripts.\n\nReading package lists...\nBuilding dependency tree...\nReading state information...\nE: Unable to locate package iputils-ping\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 100"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745198282141_2078424082",
+      "id": "paragraph_1745198282141_2078424082",
+      "dateCreated": "2025-04-21 01:18:02.141",
+      "dateStarted": "2025-04-21 01:37:35.966",
+      "dateFinished": "2025-04-21 01:37:35.990",
+      "status": "ERROR"
+    },
+    {
+      "text": "%sh\nping kafka",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:28:49.146",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "sh",
+          "editOnDblClick": false,
+          "completionSupport": false
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "ERROR",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "bash: ping: command not found\n"
+          },
+          {
+            "type": "TEXT",
+            "data": "ExitValue: 127"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745198913905_177129142",
+      "id": "paragraph_1745198913905_177129142",
+      "dateCreated": "2025-04-21 01:28:33.905",
+      "dateStarted": "2025-04-21 01:28:49.156",
+      "dateFinished": "2025-04-21 01:28:49.175",
+      "status": "ERROR"
+    },
+    {
+      "text": "pip install kafka-python",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:30:16.171",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "Collecting kafka-python\r\n  Downloading kafka_python-2.1.5-py2.py3-none-any.whl.metadata (9.2 kB)\r\nDownloading kafka_python-2.1.5-py2.py3-none-any.whl (285 kB)\r\nInstalling collected packages: kafka-python\r\nSuccessfully installed kafka-python-2.1.5\r\n\u001b[33mWARNING: Running pip as the \u0027root\u0027 user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.\u001b[0m\u001b[33m\r\n\u001b[0mNote: you may need to restart the kernel to use updated packages.\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745199008251_1529350825",
+      "id": "paragraph_1745199008251_1529350825",
+      "dateCreated": "2025-04-21 01:30:08.251",
+      "dateStarted": "2025-04-21 01:30:16.183",
+      "dateFinished": "2025-04-21 01:30:17.700",
+      "status": "FINISHED"
+    },
+    {
+      "text": "# kafka python 설정\nfrom kafka import KafkaProducer\nimport json\nimport time\n\nproducer \u003d KafkaProducer(\n    bootstrap_servers \u003d \u0027Kafka:9092\u0027,\n    value_serializer \u003d lambda v:json.dumps(v).encode(\u0027utf-8\u0027)\n)\nnum \u003d 0\nhow \u003d 1000\ndelay \u003d 1\n\n# 테스트용 스마트카 데이터\ndef generate_smartcar_data():\n    import random\n    return{\n        \"car_id\": f\"{num}/{how}\",   # 임의의 자동차 아이디\n        \"speed\": round(random.uniform(80, 100),2),  # 차량의 임의속도 (km/h)\n        \"latitude\": round(random.uniform(34, 36),2),    # 위도\n        \"longitude\": round(random.uniform(124,126),2),  # 경도\n        \"timestamp\": time.time()\n    }\n\nif __name__ \u003d\u003d \"__main__\":\n    try:\n        for r in range(how):\n            data \u003d generate_smartcar_data()\n            producer.send(\"smart-car\", value\u003ddata)  # topic에 data 담아서 보내기\n            print(f\u0027Send:{data}\u0027)   # 우리가 보는 데이터\n            time.delay(delay)\n    except:\n        print(\"에러발생\")\n    finally:\n        producer.close()",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:53:30.955",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {
+          "language": "python",
+          "editOnDblClick": false,
+          "completionSupport": true
+        }
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "results": {
+        "code": "SUCCESS",
+        "msg": [
+          {
+            "type": "TEXT",
+            "data": "에러발생\n"
+          }
+        ]
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745198929156_1820990033",
+      "id": "paragraph_1745198929156_1820990033",
+      "dateCreated": "2025-04-21 01:28:49.156",
+      "dateStarted": "2025-04-21 01:53:30.966",
+      "dateFinished": "2025-04-21 01:54:31.025",
+      "status": "FINISHED"
+    },
+    {
+      "text": "",
+      "user": "anonymous",
+      "dateUpdated": "2025-04-21 01:29:54.170",
+      "progress": 0,
+      "config": {
+        "colWidth": 12.0,
+        "fontSize": 9.0,
+        "results": {},
+        "enabled": true,
+        "editorSetting": {}
+      },
+      "settings": {
+        "params": {},
+        "forms": {}
+      },
+      "apps": [],
+      "runtimeInfos": {},
+      "progressUpdateIntervalMs": 500,
+      "jobName": "paragraph_1745198984138_1178438417",
+      "id": "paragraph_1745198984138_1178438417",
+      "dateCreated": "2025-04-21 01:29:44.138",
+      "status": "READY"
+    }
+  ],
+  "name": "ju02",
+  "id": "2KTYQH9K4",
+  "defaultInterpreterGroup": "python",
+  "version": "0.12.0",
+  "noteParams": {},
+  "noteForms": {},
+  "angularObjects": {},
+  "config": {
+    "isZeppelinNotebookCronEnable": false
+  },
+  "info": {}
+}

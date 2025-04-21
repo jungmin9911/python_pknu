@@ -1,0 +1,57 @@
+04.21 (월)
+
+▶ VS code
+code폴더에 Kafka 폴더 생성 > docker-compsoe.yml 파일 생성
+>>>>>>>>
+services:
+  zookeeper:
+    image: wurstmeister/zookeeper:latest
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+  kafka:
+    image: wurstmeister/kafka:latest
+    container_name: kafka
+    ports:
+      - "9092:9092"
+    environment:
+      KAFKA_ADVERTISED_HOST_NAME: 127.0.0.1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+<<<<<<<
+
+▶ CMD
+docker exec -it kafka bash
+cd opt
+cd kafka_2.13-2.8.1/
+cd bin
+ls
+cd ~		// bin 빠져나와서 홈으로
+pwd		// /root
+kafka-topics.sh --create --topic topic1 --bootstrap-server kafka:9092 --replication-factor 1 --partitions 2		// Created topic topic1.
+kafka-console-producer.sh --topic topic1 --broker-list kafka:9092	// > 나오면 성공
+▶ 다른 CMD창
+docker exec -it kafka bash
+kafka-console-consumer.sh --topic topic1 --bootstrap-server kafka:9092
+♣ 다시 첫번째 cmd창 가서 아무 말이나 넘기면 두번째 cmd창에 내용이 뜸
+
+▶ 제플린 접속
+docker run -itd --user root --name zep01 --hostname PKNU --network hdfs_mynet -p 28080:8080 -v /d/code/dockerfile_data/zeppelin:/opt/zeppelin/notebook/data apache/zeppelin:0.12.0			// 이미 있으면 오류뜰 것
+도커에서 제플린 홈페이지 열고 /data/ju01 파일 생성
+
+▶ CMD
+ctrl + c로 admin으로 빠져나온 후
+docker network ls
+docker network connect kafka_default zep01
+docker network inspect kafka_default 
+docker start zep01
+
+다시 제플린으로 돌아가서 코드 작성...
+ju01
+
+▶ CMD
+docker exec -it kafka bash
+kafka-topics.sh --topic smart-car --bootstrap-server kafka:9092	// 이 코드 아님. 뒤에 못봄
+...했는데 자꾸 제플린 오류떠서 일단 여기서 끝
+
+
+
