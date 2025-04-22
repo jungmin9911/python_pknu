@@ -1,0 +1,25 @@
+04.22 (화)
+
+HTML 시작!!
+
+태그
+시작: 끝
+<a></a>
+<div></div>
+<span></span>
+<kys></kys>
+등등...
+
+▶ VS Code
+확장
+- Live Server (중요)		// html
+- Prettier - code formatter	// 다른 언어에서도 사용가능
+- HTML CSS support		// html
+- Color Highlight			// 그외
+- Material Icon Theme		// html, CSS
+- Git Graph				// git
+
+code/html/html 안에 파일 생성
+> ex01-01~09.html
+
+파이어폭스 설치 > 버튼명 다르게 뜨는 거 보라고...

@@ -84,3 +84,4 @@ git push -u origin 브랜치명		// 브랜치 생성 후 첫 푸시
 
 * 리포지터리 생성시 .gitignore 파일 필수 생성
 
+* 리포지터리 설정 > Pages > Branch를 main으로 설정 후 저장

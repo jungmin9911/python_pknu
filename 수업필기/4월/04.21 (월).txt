@@ -52,6 +52,6 @@ ju01
 
 ▶ CMD
 docker exec -it kafka bash
-kafka-topics.sh --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
 
 
