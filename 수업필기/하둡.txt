@@ -10,3 +10,9 @@ docker run -itd --name hdfs_jm --hostname namenode -p 9870:9870 -p 9000:9000 -p 
 ▶ datanode 만들기 (여러개 생성)
 docker run -itd --name hdfs_jm --hostname datanode -p 9870:9870 -p 9000:9000 -p 8025:8025 -p 8088:8088 -p 25:22 -v D:/dockerdata/namenode:/data/hadoop/dfs/name hadoop:1.0
 
+<kafka 생성>
+▶CMD
+docker exec -it kafka bash
+kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+
+kafka-console-consumer.sh --topic smart-car3 --bootstrap-server 210.119.14.56:9092

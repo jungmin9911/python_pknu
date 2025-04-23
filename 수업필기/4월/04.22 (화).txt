@@ -22,4 +22,26 @@ HTML 시작!!
 code/html/html 안에 파일 생성
 > ex01-01~09.html
 
+왼쪽 목록에 트리모양(소스제어)
+> vscode에서 바로 git에 올리기
+
+깃허브에 새로운 리포지터리 생성
+VS code 넘어와서 연결할 폴더 우클릭 > 통합터미널
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://githyb.com/jungmin9911/html_pknu.git
+git push -u origin main
+
 파이어폭스 설치 > 버튼명 다르게 뜨는 거 보라고...
+
+html
+띄어쓰기
+= " "
+소괄호 ( )
+중괄호 { }
+대괄호 [ ]
+
+콤마 , 
+콜론 : 
+세미콜론 ;
