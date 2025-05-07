@@ -12,7 +12,12 @@ docker run -itd --name hdfs_jm --hostname datanode -p 9870:9870 -p 9000:9000 -p 
 
 <kafka 생성>
 ▶CMD
+<프로듀서>
 docker exec -it kafka bash
-kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
+kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1	// smart-car 생성
+kafka-console-producer.sh --topic smart-car --broker-list kafka:9092	// 조회
 
-kafka-console-consumer.sh --topic smart-car3 --bootstrap-server 210.119.14.56:9092
+<컨슈머>
+docker exec -it kafka bash	// 카프카 접속
+kafka-topics.sh --bootstrap-server 210.119.14.66:9092 --list  // 조회
+kafka-console-consumer.sh --topic smart-car --bootstrap-server 210.119.14.66:9092	// 서버? 접속
