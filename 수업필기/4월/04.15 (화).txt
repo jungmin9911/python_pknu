@@ -20,7 +20,7 @@ namenode에서 datanode 접속 방법
 
 이건 뭐임
 namenode에서
-- ssh-keygen -t rsa > cd .ssh 
+- ssh-keygen -t rsa > 계속 엔터 > cd .ssh 
 >> id_rsa  id_rsa.pub 조회확인
 - cd ~ 
 - ssh-copy-id hadoop@datanode1 > 1234
@@ -176,11 +176,9 @@ ls
 cd hadoop
 pwd 		// 출력문 /home/hadoop/hadoop-3.4.1/etc/hadoop
 cd ~		// 홈으로 돌아간 뒤 아래 코드 실행
-<namenode를 datanode1에 복사>
+<namenode를 datanode1~3에 복사>
 scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode1:/home/hadoop/hadoop-3.4.1/etc/hadoop
-<namenode를 datanode2에 복사>
 scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode2:/home/hadoop/hadoop-3.4.1/etc/hadoop
-<namenode를 datanode3에 복사>
 scp -r /home/hadoop/hadoop-3.4.1/etc/hadoop/* hadoop@datanode3:/home/hadoop/hadoop-3.4.1/etc/hadoop
 
 <각 노드에 폴더 생성> - 도커 컴포즈로 생략가능

@@ -10,7 +10,7 @@
 또는 cmd > docker exec -it mongodb bash (docker exec -it mongodb sh 도 있음)
 ls	// 목록 확인
 mongosh
-tset dbs
+tset dbs	// 이건 머임? 오류뜨는디
 use mdb	// mdb로 연결. test> 에서 mdb> 이걸로 바뀌어있을 거임
 show dbs	// dbs 조회
 db.c1(컬렉션 이름임).insertOne({name:'hong', age:22, etc:"아버지부르지못함"})	// 컬렉션을 하나만 넣을땐 insertOne, 많으면 insertMany
