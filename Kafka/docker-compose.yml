@@ -12,5 +12,7 @@ services:
     environment:
       KAFKA_ADVERTISED_HOST_NAME: kafka
       KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://210.119.14.66:9092
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock

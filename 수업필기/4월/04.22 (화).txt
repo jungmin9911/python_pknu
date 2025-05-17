@@ -1,0 +1,58 @@
+04.22 (화)
+
+HTML 시작!!
+
+태그
+시작: 끝
+<a></a>
+<div></div>
+<span></span>
+<kys></kys>
+등등...
+
+▶ VS Code
+확장
+- Live Server (중요)		// html
+- Prettier - code formatter	// 다른 언어에서도 사용가능
+- HTML CSS support		// html
+- Color Highlight			// 그외
+- Material Icon Theme		// html, CSS
+- Git Graph				// git
+
+code/html/html 안에 파일 생성
+> ex01-01~09.html
+
+왼쪽 목록에 트리모양(소스제어)
+> vscode에서 바로 git에 올리기
+
+깃허브에 새로운 리포지터리 생성
+VS code 넘어와서 연결할 폴더 우클릭 > 통합터미널
+git init
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://githyb.com/jungmin9911/html_pknu.git
+git push -u origin main
+
+파이어폭스 설치 > 버튼명 다르게 뜨는 거 보라고...
+
+html
+띄어쓰기
+= " "
+소괄호 ( )
+중괄호 { }
+대괄호 [ ]
+
+콤마 , 
+콜론 : 
+세미콜론 ;
+
+position
+relative 부모	// 
+absolite 자식
+
+display : flex
+부모에게 적용 자식들이 알아서 잘해요
+
+row, column
+justify-content : 주축(기본) 왼쪽 -> 오른쪽
+align-items : 교차축(기본) 위 -> 아래
