@@ -1,0 +1,136 @@
+05.26 (월)
+
+▶ VS Code
+새창 열기
+폴더 열기 (경로 - D:\code\dockerfile_data\dev_springboot)
+dockerfile 생성
+>>>>>>>>>>>>>
+# openjdk 기반 이미지 slim버전 사용
+FROM openjdk:17-jdk-slim
+
+# 필수 패키지 설치
+RUN apt update && apt install -y nano maven && rm -rf /var/lib/apt/lists/*
+
+# 작업폴더 이름변경 가능(worksapce로 생성됨)
+WORKDIR /workspace
+<<<<<<<<<<<<<
+.devcontainer 폴더 생성 후 이 안에 dockerfile넣어주기
+똑같이 저 폴더 안에 devcontainer.json 생성
+>>>>>>>>>>>>>
+{
+    "name": "Java Dev Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "terminal.integrated.defaultProfile.linux": "bash"
+            },
+            "extensions": [
+                "vscjava.vscode-java-pack",
+                "pivotal.vscode-spring-boot",
+                "ms-azuretools.vscode-docker"
+            ]
+        }
+    },
+    "forwardPorts": [
+        8080,
+        35729
+    ],
+    "postCreateCommand": "echo 'Dev Container Ready!'"
+}
+<<<<<<<<<<<<<
+입력 온료하면 왼쪽 아래 원격..어쩌고 >< 이거 누르고
+컨테이너에서 다시 열기 (좀 오래 걸림...) 
+완료되면 터미널에 완료화면 보고 아무키나 누르기
+이후 이 링크 접속 https://start.spring.io/
+
+▶ https://start.spring.io/ 에서
+Project - Maven
+Language - Java
+SpringBoot - 3.5.0
+Project Metadata
+	Group - com.pknu
+	Artifact - myspring
+	Name - myspring
+	Description - project for Spring Boot
+	Package name - com.pknu.myspring
+	Packaging - Jar
+	Java - 17
+완료(GENERATE 누르면 압축폴더 저장됨)
+압축 풀고 dev_springboot 안에 집어넣기
+// 근데 이거 명건쌤 시간에 Ctrl+Shift+P 이걸로 한 거 아닌가...?
+
+▶ VS Code
+main 안에 myspring 우클릭 > New Java Package > controller 입력
+controller 우클릭 > New Java File > Class > MyController 입력
+MyController.java에 아래 코드 입력
+>>>>>>>>>>>>>
+package com.pknu.myspring.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotaion.GetMapping;
+
+// import java.util.List;
+
+@Controller
+public class MyController {
+    @GetMapping("/")
+    public String mainPage(Model model){
+        return "index"
+    }
+}
+<<<<<<<<<<<<<
+
+확장 설치
+spring Initializr Java Support
+thymeleaf
+extension 어쩌고.. 흰 배경에 컵그림
+
+pom 수정
+>>>>>>>>>>>>>
+   <dependencies>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-devtools</artifactId>
+         <scope>runtime</scope>
+         <optional>true</optional>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      </dependency>
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-test</artifactId>
+         <scope>test</scope>
+      </dependency>
+
+      <dependency>
+         <groupId>org.springframework.boot</groupId>
+         <artifactId>spring-boot-starter-web</artifactId>
+      </dependency>
+   </dependencies>
+<<<<<<<<<<<<<
+
+>< 누르고 로컬에서 폴더 다시 열기
+
+이러면 빨간줄 없어져야되는데 계속 뜸...
+
+===================== 수업 필기 =====================
+스프링부트 -> 프레임워크
+
+Model -> DTO, DAO,...
+View -> Html, 정적웹페이지
+Controller -> 제어
+
+.jar -> 실행하면 서버가 됨
+------------------------------------
+** 편리기능
+설정 > folder 검색 > Exploer:Compact Folders 체크 해제	// 탐색기에서 파일 한줄로 뜨는거 방지
