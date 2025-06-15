@@ -1,0 +1,82 @@
+05.27 (화)
+
+▶ VS Code에서
+pom.xml에 아래 코드 입력 ( <dependencies> 안에)
+>>>>>>>>>>>>>>>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-actuator</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-devtools</artifactId>
+	<scope>runtime</scope>
+	<optional>true</optional>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-thymeleaf</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-web</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-test</artifactId>
+	<scope>test</scope>
+</dependency>
+<<<<<<<<<<<<<<<
+저장 후 MyspringApplication.java 실행
+크롬 주소창에 localhost:8080 치고 연결되면 성공
+
+** 혹시 포트번호 바꾸고싶으면
+resources > application.properties 파일 안에
+server.port=포트번호(ex.18080) 입력
+
+myspring > main > resources 폴더 안에 static 폴더 생성
+그 안에 예시 html 파일 생성
+><에서 컨테이너 다시 열기
+MyspringApplication.java 실행 후 주소 접속하면 html 내용 뜸
+
+<메이븐 jar 파일 생성>
+myspring 폴더에서 우클릭 후 통합터미널 열기
+mvn package 실행
+jar 파일 우클릭 후 통합터미널 열기
+la	// 굳이 안 해도 되는듯
+la -al
+java -jar myspring_v1.jar	// java -jar 파일명	// jar로 빌드? 실행?하는 것
+
+=== 외부접속 가능하게 하기 ===
+1. 포트를 바꾸고 8080 -> 자신의 폴더	※ 내부 접속 준비
+⊙ 방법
+    ▶ 개발 컨테이너에서
+	myspring > src > main > resources > application.properties에
+	server.port = 8100 코드 추가		// 내 포트번호임
+2. jar로 빌드하여
+⊙ 방법
+    ▶ 계속 개발 컨테이너에서
+	myspring > target > myspring-0.0.1-SNAPSHOT.jar 우클릭 통합터미널 열기
+	java -jar myspring-0.0.1-SNAPSHOT.jar 실행
+	크롬에서 localhoat:8100 접속 확인하기
+3. 선생님 프로젝트 컨테이너에 복사 후	※ 외부 접속 준비
+  3-1. ssh로 중계 ssh 접속
+	ssh ys@bjava.iptime.org -p 8892
+  3-2. ssh로 본인 ssh 접속
+	ssh pkuser@localhost -p 230		// 내 포트번호임
+  3-3. scp로 파일 복사
+	또는
+  3-3a. vscode로 ssh 이중접속 (중계)
+  3-3b. 드래그 앤 드롭으로 파일 복사✔️	// 나는 이 방법 씀
+    >< 눌러서 호스트 연결 > mycontainer 연결	// 비번 1234
+    폴더열기 > 입력창 뜨면 경로 /home/pkuser/data/ 입력 후 확인
+    탐색기 열리면 여기에다가 myspring > target > jar 파일 드래그 앤 드랍
+4. 실행	// java -jar 파일명	
+java -jar myspring-0.0.1-SNAPSHOT.jar
+  4-0. jdk 설치	// 버전이 안 맞아서 다시 설치하는 것
+  4-1. sudo apt update
+  4-1. sudo apt install openjdk-17-jdk-headless
+  4-1. java -version
+5. 포트포워딩 완료	// 선생님이 하심
+이후 아래 주소로 외부 웹페이지 사용 가능
+http://bjava.iptime.org:8880/		// 8880은 내 포트번호

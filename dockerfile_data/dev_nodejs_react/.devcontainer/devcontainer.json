@@ -1,0 +1,17 @@
+{
+    "name": "Nodejs Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "forwardPorts": [
+        8080,
+        35729
+    ],
+    "postCreateCommand": "echo 'Dev Container Ready!'"
+}

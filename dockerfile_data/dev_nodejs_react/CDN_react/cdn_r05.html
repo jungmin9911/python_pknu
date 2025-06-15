@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const App = () => {
+            const [status, setStatus] = React.useState(false);
+            const change = () => setStatus(!status);
+            return (
+                <>
+                    <h1>컴포넌트</h1>
+                    <h2>{status}</h2>
+                    <button onClick={change}>{status + "입니다."}</button>
+                    <hr/>
+                    {status && Component1}
+                </>
+            )
+        }
+        const Component1 = () => <div className="comp1">기본 컴포넌트</div>;
+        const Component2 = () => <div className="comp2">다른 컴포넌트</div>;
+
+        ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+    </script>
+</body>
+</html>

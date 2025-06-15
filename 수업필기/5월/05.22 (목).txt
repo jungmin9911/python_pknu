@@ -1,0 +1,35 @@
+05.22 (목)
+
+▶ CMD창
+ssh ys@bjava.iptime.org -p 8892	// 비번 1234
+ssh pkuser@localhost -p 230		// 비번 1234
+>>pkuser@PKDB10에 접속되면
+cd data
+java -version	// openjdk version "1.8.0_452"
+			// OpenJDK Runtime Environment (build 1.8.0_452-8u452-ga~us1-0ubuntu1~22.04-b09)
+			// OpenJDK 64-Bit Server VM (build 25.452-b09, mixed mode)
+결과 확인
+
+▶ VS code
+왼쪽 아래에 ><모양 클릭
+새 ssh 구성
+user/뭐시기 경로
+>>>>>>>>>>>>>>>
+# 중계서버
+Host teacher_main
+    HostName bjava.iptime.org
+    Port 8892
+    User ys
+
+# 나의 컨테이너
+Host mycontainer
+    HostName localhost
+    Port 230
+    User pkuser
+    ProxyJump teacher_main
+<<<<<<<<<<<<<<<
+VScode 새 창 열고 ><모양 클릭
+mycontainer(아마 새 창 열릴 것) > 리눅스 > 계속 > 1234 선택 및 입력
+탐색기에서 폴더열기 > 확인 > 1234 => 접속확인 (가상서버?열림?)
+
+

@@ -21,3 +21,32 @@ kafka-console-producer.sh --topic smart-car --broker-list kafka:9092	// 조회
 docker exec -it kafka bash	// 카프카 접속
 kafka-topics.sh --bootstrap-server 210.119.14.66:9092 --list  // 조회
 kafka-console-consumer.sh --topic smart-car --bootstrap-server 210.119.14.66:9092	// 서버? 접속
+
+<스파크 연결>
+namenode, datanode 들어가있는 HDFS 실행
+cmd창에서 ssh hadoop@localhost -p 2220으로 접속
+namenode에 접속되면 
+ssh-keygen -t rsa
+ssh-copy-id hadoop@datanode1
+ssh-copy-id hadoop@datanode2
+ssh-copy-id hadoop@datanode3
+ssh-copy-id hadoop@namenode
+hadoop 폴더에 tips > spark_sh 폴더 생성하고 안에 파일 4개 붙여넣기
+* 파일 종류 : myset.sh, myspark3g.sh, mystart.sh, mystop.sh
+새로운 cmd창 열어서
+scp -P 2220 my* hadoop@localhost:/home/hadoop
+다시 원래 cmd창 가서
+. myset.sh
+ssh hadoop@datanode1
+아까 만들었던 새로운 cmd창 다시 열어서
+scp -P 2221 my* hadoop@localhost:/home/hadoop
+. myset.sh
+약간.. 뭐.. 복붙하는 작업?인...듯??;;
+exit로 namenode로 빠져나와서
+. myspark3g.sh
+==> 버전 안 맞아서 수정필요
+수정과정>>>>>>>>>>>
+nano myspark3g.sh
+여기서 3.5.5를 3.5.6으로 수정
+<<<<<<<<<<<<
+. myspark3g.sh		// 이거 하면 이제 뭐 다운로드됨

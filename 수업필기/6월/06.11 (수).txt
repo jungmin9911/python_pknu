@@ -1,0 +1,39 @@
+06.11 (수)
+
+▶VScode에서
+dev_nodejs_react > VITE_react 폴더 생성 후 우클릭 통합터미널 열기
+npm create vite@latest vite_01	// vite react 시작 명령어
+React		// frame work
+JavaScript	// variant
+cd vite_01 
+npm install 
+npm run dev
+// h + enter 로 약어 보기 
+// q + enter 로 나오기 
+
+package.json 파일에서 "script" 부분 아래 코드로 수정
+>>>>>>>>>>>>>>>
+  "scripts": {
+    "dev": "vite --host",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+<<<<<<<<<<<<<<<
+vite_01 우클릭 터미널
+npm run dev 		// 실행코드
+
+src > App.jsx 에서 
+return 안에 <></> 빼고 지우기
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg' 임포트 내용도 삭제 
+
+src > assets > react.svg 삭제 
+src > assets 는 내장형 느낌 .
+public > vite.svg 는 대외적? 머 그래도 하여간 삭제
+
+src 안에 pages 폴더 생성
+여기서 jsx 파일 만들어서 작업하면 됨
+
+npm i react-router-dom
+npm i axios

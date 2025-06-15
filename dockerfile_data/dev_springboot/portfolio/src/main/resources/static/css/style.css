@@ -1,0 +1,299 @@
+@font-face {
+    font-family: 'MyFont';
+    src: url("/font/high1\ Wonchuri\ Title\ M.ttf");
+}
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    height: 200vh;
+    background-color: #F2F2F2;
+    font-family: 'MyFont';
+}
+html {
+    scroll-behavior: smooth;
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+/* 메뉴바 */
+header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 23%;
+    height: 100%;
+    text-align: center;
+    background-color: #B6B09F;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    /* display: flex; */
+    /* align-items: center; */
+}
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+li {
+    margin: 0 17%;
+    padding: 5px;
+    font-size: 14px;
+}
+li h1 {
+    text-align: center;
+}
+li:nth-child(2) {
+    text-align: center;
+}
+
+/* 메인 박스 */
+main {
+    position: relative;
+    margin-right: 20%;
+    padding: 20px;
+    /* text-align: center; */
+}
+
+/* 인사말 */
+#first {
+    display: flex;
+    /* justify-content: center; */
+    padding-left: 10%;
+    align-items: center;
+    height: 130px;
+    font-size: 24px;
+}
+#second {
+    display: flex;
+    padding-left: 10%;
+    height: 120px;
+    font-size: 20px;
+}
+#second p {
+    line-height: 30px;
+}
+
+/* 내용 */
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0;
+}
+.card {
+    padding-left: 10%;
+    width: 80%;
+}
+.text {
+    position: relative;
+    padding: 10px 0;
+}
+
+/* 기술스택 */
+.stack {
+    padding-bottom: 30px;
+}
+.skill {
+    display: flex;
+    flex-direction: row;
+}
+.skill_icon {
+    /* width: 70px; */
+    padding: 5px 10px;
+    margin-right: 10px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #000;
+}
+
+/* 교육 */
+.edu {
+    padding-bottom: 10px;
+}
+.edu h2 {
+    display: inline;
+}
+.edu_a {
+    display: inline;
+    padding-left: 8px;
+    color: #aaa;
+}
+.edu_info {
+    line-height: 23px;
+    padding: 10px 0;
+}
+
+/* 프로젝트 */
+.project {
+    display: flex;
+    flex-wrap: wrap;
+}
+.pcard {
+    position: relative;
+    padding: 15px;
+    width: 45%;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 0 15px 20px 0;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    background-color: #EAE4D5;
+    transition: transform 0.2s ease;
+}
+.pcard:hover {
+    transform: scale(1.01);
+}
+.pcard p {
+    font-size: 18px;
+}
+.p_day, .p_info, .p_my {
+    padding-bottom: 10px;
+}
+.p_my span {
+    font-size: 14px;
+    color: #aaa;
+}
+.p_day {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* 프로젝트 툴팁 */
+.tooltip {
+    position: fixed;
+    background-color: rgba(50, 50, 50, 0.7);
+    color: #fff;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 14px;
+    pointer-events: none;
+    white-space: nowrap;
+    z-index: 9999;
+    display: none;
+}
+
+/* 줄 */
+hr {
+    background: #B6B09F;
+    height: 0.15rem;
+    border: 0;
+}
+
+@media(min-width:1300px) and (max-width: 1500px) {
+    /* 프로젝트 */
+    .project {
+        flex-wrap: column;
+    }
+    .pcard {
+        width: 44%;
+    }
+}
+
+@media(min-width:1120px) and (max-width: 1300px) {
+    /* 메뉴바 */
+    header {width: 30%;
+    }
+
+    /* 메인 박스 */
+    main {
+        position: relative;
+        margin-right: 30%;
+        padding: 20px;
+    }
+
+    /* 인사말 */
+    #first {
+        display: flex;
+        padding-left: 10%;
+        align-items: center;
+        height: 130px;
+        font-size: 24px;
+    }
+    #second {
+        display: flex;
+        padding-left: 10%;
+        height: 120px;
+        font-size: 20px;
+    }
+
+    /* 내용 */
+    .card {
+        padding-left: 10%;
+        width: 85%;
+    }
+
+    /* 교육 */
+    .edu h2 {
+        display: block;
+    }
+    .edu_a {
+        padding-left: 0px;
+        color: #aaa;
+    }
+
+    /* 프로젝트 */
+    .project {
+        flex-wrap: column;
+    }
+    .pcard {
+        width: 100%;
+    }
+}
+
+@media(max-width: 1200px) {
+    /* 메뉴바 */
+    header {
+        width: 30%;
+    }
+
+    /* 메인 박스 */
+    main {
+        position: relative;
+        margin-right: 30%;
+        padding: 20px;
+    }
+
+    /* 인사말 */
+    #first {
+        display: flex;
+        padding-left: 8%;
+        align-items: center;
+        height: 130px;
+        font-size: 20px;
+    }
+    #second {
+        display: flex;
+        padding-left: 8%;
+        height: 120px;
+        font-size: 16px;
+    }
+
+    /* 내용 */
+    .card {
+        padding-left: 8%;
+        width: 85%;
+    }
+
+    /* 교육 */
+    .edu h2 {
+        display: block;
+    }
+    .edu_a {
+        padding-left: 0px;
+        color: #aaa;
+    }
+
+    /* 프로젝트 */
+    .project {
+        flex-wrap: column;
+    }
+    .pcard {
+        width: 100%;
+    }
+}
