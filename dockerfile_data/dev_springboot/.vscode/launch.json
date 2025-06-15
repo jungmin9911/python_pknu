@@ -1,0 +1,34 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "SpReactApplication",
+            "request": "launch",
+            "mainClass": "com.pknu.sp_react.SpReactApplication",
+            "projectName": "sp_react"
+        },
+        {
+            "type": "java",
+            "name": "PortfolioApplication",
+            "request": "launch",
+            "mainClass": "com.pknu.portfolio.PortfolioApplication",
+            "projectName": "portfolio"
+        },
+        {
+            "type": "java",
+            "name": "My01Application",
+            "request": "launch",
+            "mainClass": "com.pknu.my01.My01Application"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MyspringApplication<myspring>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.pknu.myspring.MyspringApplication",
+            "projectName": "myspring",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

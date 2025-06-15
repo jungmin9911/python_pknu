@@ -41,7 +41,7 @@ WORKDIR /workspace
     "postCreateCommand": "echo 'Dev Container Ready!'"
 }
 <<<<<<<<<<<<<
-입력 온료하면 왼쪽 아래 원격..어쩌고 >< 이거 누르고
+입력 완료하면 왼쪽 아래 원격..어쩌고 >< 이거 누르고
 컨테이너에서 다시 열기 (좀 오래 걸림...) 
 완료되면 터미널에 완료화면 보고 아무키나 누르기
 이후 이 링크 접속 https://start.spring.io/
@@ -60,7 +60,7 @@ Project Metadata
 	Java - 17
 완료(GENERATE 누르면 압축폴더 저장됨)
 압축 풀고 dev_springboot 안에 집어넣기
-// 근데 이거 명건쌤 시간에 Ctrl+Shift+P 이걸로 한 거 아닌가...?
+// 근데 이거 Ctrl+Shift+P 이거랑 같은 거 아닌가...?
 
 ▶ VS Code
 main 안에 myspring 우클릭 > New Java Package > controller 입력

@@ -1,0 +1,48 @@
+06.09 (월)
+
+▶ Node.js 설치
+구글에 node.js 검색 > 사이트에서 Node.js 다운로드 (LTS)
+계속 next 누르다가 Automatically install 어쩌고 체크 해제 후 next
+cmd창에 node -v > v22.16.0 출력 확인
+
+▶ 도커 설정...?
+dockerfile_data 폴더에 dev_nodejs_react 생성
+.devcontainer 폴더 만들고 그 안에 Dockerfile 생성
+>>>>>>>>>>>>>>
+FROM node:latest
+
+RUN	apt update && \
+	apt install -y nano && \
+	rm -rf /var/lib/apt/lists/*
+
+WORKDIR /workspace
+
+# 명시적으로 외부 3000포트 쓰겠다는 의지
+EXPOSE 3000
+<<<<<<<<<<<<<<
+.devcontainer 폴더에 devcontainer.json 생성
+>>>>>>>>>>>>>>
+{
+    "name": "Nodejs Container",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+    },
+    "extensions": [
+        "ms-azuretools.vscode-docker"
+    ],
+    "forwardPorts": [
+        8080,
+        35729
+    ],
+    "postCreateCommand": "echo 'Dev Container Ready!'"
+}		// 이거 맞는지 모르겠음 ㅠㅠㅠ
+<<<<<<<<<<<<<<
+
+구글에 CDN 링크 검색
+react 홈페이지 들어가서 아래 코드 복붙
+<script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+

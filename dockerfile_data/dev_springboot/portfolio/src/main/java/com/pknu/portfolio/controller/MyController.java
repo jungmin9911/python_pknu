@@ -1,8 +1,8 @@
-package com.pknu.myspring.controller;
+package com.pknu.portfolio.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotaion.GetMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 
 // import java.util.List;
 
@@ -10,6 +10,6 @@ import org.springframework.web.bind.annotaion.GetMapping;
 public class MyController {
     @GetMapping("/")
     public String mainPage(Model model){
-        return "index";
+        return "portfolio";
     }
 }

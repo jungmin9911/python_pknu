@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @font-face {
+            font-family: 'myfont';
+            src: url("");
+        }
+        h1 {
+            margin: auto;
+            padding: 20px;
+            width: 600px;
+            text-align: center;
+            border-radius: 40px;
+            background-color: #F8ED8C;
+            border: 1px solid #89AC46;
+            color: #333;
+        }
+        .my-box {
+            padding: 20px;
+            width: 1000px;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>🍀 로또 당첨 번호 🍀</h1>
+    <div class="my-box">
+        <canvas id="lottoChart"></canvas>
+    </div>
+    <script>
+    // JSON 파일 불러오기
+    fetch('ref/lotto_freq.json')
+      .then(response => response.json())
+      .then(data => {
+        const entries = Object.entries(data);
+        entries.sort((a, b) => b[1] - a[1]);
+
+        const labels = entries.map(entry => entry[0]);   // 번호
+        const values = entries.map(entry => entry[1]); // 각 숫자의 등장 횟수
+
+        const ctx = document.getElementById('lottoChart').getContext('2d');
+        const chart = new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: labels,
+            datasets: [{
+              label: '등장 횟수',
+              data: values,
+              backgroundColor: 'rgba(rgb(137, 172, 70, 0.6)', 
+              borderColor: 'rgba(160, 200, 120, 1)',
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: { stepSize: 10 }
+              }
+            }
+          }
+        });
+    });
+  </script>
+</body>
+</html>

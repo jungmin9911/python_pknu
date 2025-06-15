@@ -1,0 +1,50 @@
+06.12 (목)
+
+<리액트, 스프링부트 합치기?>
+▶ VScode에서 
+dockerfile_data > dev_springboot 컨테이너로 열고 Ctrl + Shift + p 
+Spring Initializr : create new maven project
+3.5.0
+java
+com.pknu
+my02
+thymeleaf, spring web, lombok 추가 후 생성
+
+pom 수정 		// 5.27 (화) 필기에 있음
+application.properties에 아래 코드 삽입
+>>>>>>>>>>>>>
+spring.application.name=my02	// 이거 폴더명? 플젝명?이랑 같아야댐
+# 포트바꾸기 설정, 기본은 8080
+server.port=8100 
+spring.thymeleaf.cache=false
+spring.devtools.restart.enabled=true
+spring.devtools.livereload.enabled=true
+spring.web.resources.static-locations=file:./dist/
+<<<<<<<<<<<<<
+com.pknu.my02 안에 controller 생성 후 우클릭 > new java file > class로
+My02Controller.java 파일 생성 후 아래 코드 삽입
+>>>>>>>>>>>>>
+package com.pknu.my02.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class My02Controller {
+    @GetMapping("/api")
+    public String Api(Model model) {
+        model.addAttribute("who", "friend");
+        model.addAttribute("passkey", "ok-key");
+        return "index";
+    }
+<<<<<<<<<<<<<
+일단 대기
+
+▶ VScode에서 리액트 폴더 열기
+vite_02 통합터미널 열고 npm run build로 빌드
+조금 기다리면 dist 폴더 생길 것
+
+▶ VScode에서 다시 my02
+my02로 통합터미널 열고 mvn package	// 그 전에 mvn -v로 메이븐 있는가 확인
+

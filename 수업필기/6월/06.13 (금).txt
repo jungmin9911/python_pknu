@@ -1,0 +1,52 @@
+06.13 (금)
+
+=== 수업 필기 ===
+서버 종류
+일시적으로 가능
+안드로이드 - juicessh, tmux, ssh앱
+ssh 접속 후 : sudo nohub java -jar 파일이름 &
+sudo apt install htop 설치 후 htop gui 스타일로 점유율
+tmux -> 실무적이며 세션 유지
+
+<VScode 확장팩 정리하는 방법>
+▶ VScode에서
+Ctrl + Shift + p
+실행중인 확장 표시 검색 (dev show run)
+여기서 안 쓰는 확장팩들 삭제 가능
+
+<이거 뭐... 메이븐 프로젝트 만들고 배포하는 방법?>
+Ctrl + Shift + p
+Spring Initializr : Create a Maven Project
+3.5.0
+Javaxom.pknu
+sp_react
+jar
+17
+spring web 추가? 설치? 적용?
+경로 설정 > dev_springboot에 생성
+sp_react 만들어지면 로컬 갔다가 다시 컨테이너로
+sp_react > application.properties 에 아래 코드
+>>>>>>>>>>>>>>>
+spring.application.name=sp_react
+server.port=8100     
+
+spring.web.resources.static-locations=file:./dist/
+<<<<<<<<<<<<<<<
+pom.xml > <version>부분 v1으로 수정	// <version>v1</version>
+▶여기서부터 무한반복◀
+sp_react 우클릭 후 통합터미널 열기
+mvn clean package
+jar 파일 생성되면 우클릭 후 통합터미널 열기
+아까 빌드해놓은 dist 폴더 target안에 넣기 (vite_02 빌드했었음)
+>>빌드하는 방법>>(한번만 만들어놓으면 됨. 수정했을때만 돌리기)
+vite_02 우클릭 후 통합터미널 열기
+npm run build
+하면 생김
+<<<<<<<<<<<<<
+통합터미널 target으로 연결된 거 확인하면
+java -jar sp_react_v1.jar
+돌아가면 성공!!
+
+그 다음부터는 sp_react에 com.pknu.sp_react에다가 컨트롤러 만들고.. 어쩌고
+
+

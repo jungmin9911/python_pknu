@@ -1,0 +1,19 @@
+05.28 (수)
+
+<dist 폴더 만드는 방법?>
+▶ VS code에서
+dev_springboot 폴더 새창열기 (안에 myspring 있음)
+컨테이너로 다시 열기
+static 폴더 싹 다 삭제하고 application.properties에 아래 코드 입력
+>>>>>>>>>>>>>>>
+spring.thymeleaf.cache=false
+spring.devtools.restart.enabled=true
+spring.devtools.livereload.enabled=true
+spring.web.resources.static-locations=file:./dist/
+<<<<<<<<<<<<<<< (저장)
+myspring 우클릭 > 통합터미널 열기
+mvn clean package
+
+target에 dist 폴더 만들고 그 안에 index.html 생성
+target 우클릭 > 통합터미널 열기
+java -jar myspring-0.0.1-SNAPSHOT.jar (myspring_v2로 이름 바꾸고 해도 됨)
