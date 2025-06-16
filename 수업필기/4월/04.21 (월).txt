@@ -54,4 +54,5 @@ ju01
 docker exec -it kafka bash
 kafka-topics.sh --create --topic smart-car --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1
 
+카프카 있으면 삭제 > 도커 빌드 > 제플린에서 코드 돌리고 > cmd창에서 도커 카프카 접속 > 컨슈머
 

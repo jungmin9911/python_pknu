@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>숙소 리스트</title>
+</head>
+<body>
+    <h1>숙박 정보 리스트</h1>
+    <ul>
+        <li th:each="stay : ${stayList}">
+            <strong th:text="${stay.title}">숙소명</strong> -
+            <span th:text="${stay.addr1}">주소</span>
+        </li>
+    </ul>
+</body>
+</html>

@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "TourApplication",
+            "request": "launch",
+            "mainClass": "com.pknu.tour.TourApplication",
+            "projectName": "tour"
+        },
+        {
+            "type": "java",
             "name": "SpReactApplication",
             "request": "launch",
             "mainClass": "com.pknu.sp_react.SpReactApplication",
