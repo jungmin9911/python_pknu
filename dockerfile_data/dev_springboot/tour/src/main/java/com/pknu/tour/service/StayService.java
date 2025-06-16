@@ -16,7 +16,7 @@ public class StayService {
         List<StayDTO> stayList = new ArrayList<>();
 
         try {
-            String serviceKey = URLEncoder.encode("3l/V1Hzl5tc8zP1cbyTpG0qoHZTd0ngqiQCvi0Y/pAIrpFO3546iPvXSC49KxS5+YvVokbzBzL/32ysVisJD3Q==", "UTF-8");
+            String serviceKey = URLEncoder.encode("디코딩키", "UTF-8");
             String urlStr = "https://apis.data.go.kr/B551011/TarRlteTarService1/areaBasedList1"
                     + "?serviceKey=" + serviceKey
                     + "&MobileOS=ETC"
