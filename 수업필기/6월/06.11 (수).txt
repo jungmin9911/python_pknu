@@ -24,16 +24,15 @@ vite_01 우클릭 터미널
 npm run dev 		// 실행코드
 
 src > App.jsx 에서 
-return 안에 <></> 빼고 지우기
+return 안에 <></> 빼고 지우고
 import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg' 임포트 내용도 삭제 
+import viteLogo from '/vite.svg' 이것도 지우기
 
-src > assets > react.svg 삭제 
-src > assets 는 내장형 느낌 .
-public > vite.svg 는 대외적? 머 그래도 하여간 삭제
+src > assets > react.svg / public > vite.svg 다 지우기
 
 src 안에 pages 폴더 생성
 여기서 jsx 파일 만들어서 작업하면 됨
 
+확장 설치
 npm i react-router-dom
-npm i axios
+npm i axios	
